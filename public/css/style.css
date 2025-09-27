@@ -1,0 +1,334 @@
+.fix {
+    display: block; 
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.less{
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.pizza-body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Estilos para la columna izquierda */
+.left-column {
+    width: 50%;
+    height: 90%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-summary {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-items {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-total {
+    border-top: 2px solid #333;
+    padding-top: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilos para la columna derecha */
+#search-bar {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.right-column {
+    width: 50%;
+    height: 88%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.menu-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.info-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.info-button {
+    padding: 0.75rem;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.info-button:hover {
+    opacity: 0.9;
+}
+
+.products-registered {
+    background-color: #e74c3c;
+}
+
+.total-sales {
+    background-color: #3498db;
+}
+
+.profits {
+    background-color: #2ecc71;
+}
+
+.low-stock {
+    background-color: #e74c3c;
+}
+
+/* Estilos nuevos para pedidos */
+
+.menu-item {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-item.selected {
+    background-color: #f0f8ff;
+}
+
+.menu-item input[type="checkbox"] {
+    display: none;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.order-item input[type="number"] {
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.order-item button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.order-item .edit-btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Fin Estilos nuevos para pedidos */
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Span de stock crítico en inicio */
+
+.info-button .absolute {
+    position: absolute;
+    font-size: 0.8rem;
+    transform: translate(50%, -50%);
+}
+
+/* Fin Span de stock crítico en inicio */
+
+/* Corrección de sobrepuesto de DataTables */
+
+.dataTables_wrapper .dataTables_length select {
+    width: 55px;
+}
+
+/* Fin de corrección de sobrepuesto de DataTables */
+
+/* Select2 para clientes en pedidos */
+
+/* Contenedor principal */
+.select2-container {
+    width: 100% !important;
+}
+
+/* Caja de selección visible */
+.select2-container .select2-selection--single {
+    height: auto !important;
+    min-height: 42px;
+    border: 1px solid #d1d5db !important;
+    border-radius: 0.375rem !important;
+    padding: 0.5rem 0.75rem !important;
+    background-color: #fff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Caja de selección en foco */
+.select2-container--open .select2-selection--single,
+.select2-container--focus .select2-selection--single {
+    outline: none !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px #3b82f6 !important;
+}
+
+/* Texto mostrado */
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0 !important;
+    color: #000000;
+    line-height: 1.5 !important;
+}
+
+/* Flecha desplegable */
+.select2-container .select2-selection--single .select2-selection__arrow {
+    height: 100% !important;
+    top: 0 !important;
+    right: 8px !important;
+}
+
+/* Placeholder */
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: #000000 !important;
+}
+
+/* Dropdown */
+.select2-dropdown {
+    border: 1px solid #b6b9bc !important;
+    border-radius: 0 0 0.375rem 0.375rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important; /* shadow-lg */
+    margin-top: 2px !important;
+}
+
+/* Opciones del dropdown */
+.select2-results__option {
+    padding: 8px 12px !important;
+    color: #000000;
+}
+
+/* Opción seleccionada */
+.select2-results__option[aria-selected=true] {
+    background-color: #f3f4f6 !important;
+}
+
+/* Opción destacada (hover) */
+.select2-results__option--highlighted {
+    background-color: #1967d2 !important;
+    color: white !important;
+}
+
+/* Búsqueda en dropdown */
+.select2-search__field {
+    border: 1px solid #b6b9bc !important;
+    border-radius: 0.375rem !important;
+    padding: 0.25rem 0.5rem !important;
+    margin: 8px !important;
+    width: calc(100% - 16px) !important;
+}
+
+/* Para selects múltiples */
+.select2-container .select2-selection--multiple {
+    min-height: 42px !important;
+    border-radius: 0.375rem !important;
+}
+
+/* Tags en select múltiple */
+.select2-container .select2-selection--multiple .select2-selection__choice {
+    background-color: #3b82f6 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 0.25rem !important;
+    padding: 0 8px !important;
+    margin-right: 6px !important;
+}
+
+/* Botón para eliminar tags */
+.select2-container .select2-selection--multiple .select2-selection__choice__remove {
+  color: white !important;
+  margin-right: 4px !important;
+}
+
+/* Fin de select2 para clientes en pedidos */
